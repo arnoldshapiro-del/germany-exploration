@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ec4899">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Discover Ger">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <meta name="mobile-web-app-capable" content="yes">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Germany — Entdecke Deutschland</title>
@@ -25690,6 +25698,14 @@ button[onclick*="quiz"],
             printWindow.document.write(`
                 <html>
                 <head>
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ec4899">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Discover Ger">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <meta name="mobile-web-app-capable" content="yes">
                     <title>Discover Germany - ${sectionId}</title>
                     <style>
                         body { font-family: Georgia, serif; padding: 2rem; }
@@ -25818,7 +25834,8 @@ button[onclick*="quiz"],
                 </head>
                 <body>
                     ${section.innerHTML}
-                </body>
+                <script>if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(r=>console.log("SW:",r.scope)).catch(e=>console.log("SW err:",e));});}</script>
+</body>
                 </html>
             `);
             printWindow.document.close();
@@ -25962,5 +25979,6 @@ button[onclick*="quiz"],
         console.log('🇩🇪 Discover Germany loaded successfully!');
         console.log('Tips: Press "h" to return home, "t" to toggle sidebar');
     </script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(r=>console.log("SW:",r.scope)).catch(e=>console.log("SW err:",e));});}</script>
 </body>
 </html>
